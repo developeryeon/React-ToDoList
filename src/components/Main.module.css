@@ -1,0 +1,11 @@
+.Main {
+	width: 100%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 3rem 1.2rem;
+	border: 3px solid var(--main-border-color);
+	box-shadow: 0 8px 5px var(--main-box-shadow-color);
+}
