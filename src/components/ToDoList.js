@@ -40,17 +40,3 @@ function ToDoList({ toDos, setToDos, onUpdateHandler, onAddHandler }) {
 }
 
 export default ToDoList;
-
-// const moveToDos = (toDos) => {
-// 	const todoList = toDos.filter((item) => item.isDone === false);
-// 	const doneList = toDos.filter((item) => item.isDone === true);
-// 	return { todoList, doneList };
-// };
-
-/* <Form setToDos={setToDos} toDos={toDos} />
-			<List toDos={toDos} setToDos={setToDos} /> */
-
-/*
-			{toDos.map((item) => {
-						return item.isDone ? <ToDoItem todo={item} key={item.id} setToDos={setToDos} onUpdateHandler={onUpdateHandler} onDeleteHandler={onDeleteHandler} onEditHandler={onEditHandler} /> : '';
-					})} */

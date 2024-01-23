@@ -22,5 +22,3 @@ const ToDoItem = ({ todo, onDeleteHandler, onUpdateHandler }) => {
 };
 
 export default ToDoItem;
-
-/* <button onClick={() => onUpdateHandler(toDos.id)}>{toDos.isDone ? '완료' : '취소'}</button> */
