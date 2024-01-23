@@ -11,18 +11,16 @@ function Form({ toDos, setToDos }) {
 	};
 
 	const [toDo, setTodo] = useState(initial);
-	const [count, setCount] = useState(1);
 
 	const changeHandler = (event) => {
 		const { name, value } = event.target;
-		setTodo({ ...toDo, [name]: value, id: count });
+		setTodo({ ...toDo, [name]: value, id: Date.now() });
 	};
 
 	const submitHandler = (event) => {
 		event.preventDefault();
 
 		setToDos([...toDos, toDo]);
-		setCount(count + 1);
 		setTodo(initial);
 	};
 
