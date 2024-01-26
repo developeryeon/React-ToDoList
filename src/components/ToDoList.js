@@ -1,23 +1,17 @@
 import ToDoItem from './TodoItem';
-import styles from './ToDoList.module.css';
-import '../App.css';
 
 function ToDoList({ toDos, setToDos, onUpdateHandler, onAddHandler }) {
-	// if (!toDos) {
-	// 	return null;
-	// }
-
 	const onDeleteHandler = (id) => {
-		const deletedAsk = window.confirm('삭제하시겠습니까?');
-		if (!deletedAsk) return;
+		const confirmDelete = window.confirm('삭제하시겠습니까?');
+		if (!confirmDelete) return;
 		setToDos(toDos.filter((item) => item.id !== id));
 	};
 
 	return (
-		<div className={styles.WrapToDoList}>
-			<div className={styles.todoState}>
-				<h3 className={styles.working}> Working 📜 </h3>
-				<ul className={styles.TodoUl}>
+		<div>
+			<div>
+				<h3> Working 📜 </h3>
+				<ul>
 					{toDos
 						.filter((item) => item.isDone === false)
 						.map((item) => (
@@ -25,9 +19,9 @@ function ToDoList({ toDos, setToDos, onUpdateHandler, onAddHandler }) {
 						))}
 				</ul>
 			</div>
-			<div className={styles.todoState}>
-				<h3 className={styles.working}> Done 🚀 </h3>
-				<ul className={styles.TodoUl}>
+			<div>
+				<h3> Done 🚀 </h3>
+				<ul>
 					{toDos
 						.filter((item) => item.isDone === true)
 						.map((item) => (

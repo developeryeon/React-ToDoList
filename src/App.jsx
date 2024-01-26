@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import Main from './components/Main';
 import ToDoList from './components/ToDoList';
 import Form from './components/Form';
-import styles from './App.module.css';
-import './App.css';
 
 const App = () => {
 	const [toDos, setToDos] = useState([]);
@@ -18,10 +16,10 @@ const App = () => {
 	};
 
 	return (
-		<Main className={styles.Main}>
-			<h1 className={styles.title}>TODO-LIST</h1>
-			<Form className={styles.Form} toDos={toDos} setToDos={setToDos} onAddHandler={onAddHandler} />
-			<ToDoList className={styles.ToDoList} toDos={toDos} setToDos={setToDos} onUpdateHandler={onUpdateHandler} />
+		<Main>
+			<h1>TODO-LIST</h1>
+			<Form toDos={toDos} setToDos={setToDos} onAddHandler={onAddHandler} />
+			<ToDoList toDos={toDos} setToDos={setToDos} onUpdateHandler={onUpdateHandler} />
 		</Main>
 	);
 };

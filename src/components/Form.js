@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import styles from './Form.module.css';
-import '../App.css';
 
 function Form({ toDos, setToDos }) {
 	const initial = {
@@ -25,13 +23,11 @@ function Form({ toDos, setToDos }) {
 	};
 
 	return (
-		<form onSubmit={submitHandler} className={styles.todoForm}>
-			<div className={styles.todoWrap}>
-				<input type="text" className={styles.todoInput} name="text" placeholder="오늘의 할일을 입력해주세요!" value={toDo.text} onChange={changeHandler} required />
-				<input type="text" className={styles.todoInput} name="body" placeholder="할일을 구체적으로 적어보세요" value={toDo.body} onChange={changeHandler} required />
-				<button type="submit" className={styles.todoBtn}>
-					ADD
-				</button>
+		<form onSubmit={submitHandler}>
+			<div>
+				<input type="text" name="text" placeholder="오늘의 할일을 입력해주세요!" value={toDo.text} onChange={changeHandler} required />
+				<input type="text" name="body" placeholder="할일을 구체적으로 적어보세요" value={toDo.body} onChange={changeHandler} required />
+				<button type="submit">ADD</button>
 			</div>
 		</form>
 	);
