@@ -1,4 +1,4 @@
-const ToDoItem = ({ todo, onDeleteHandler, onUpdateHandler }) => {
+const ToDoItem = ({ todo, onDeleteHandler, onToggleHandler }) => {
 	return (
 		<li key={todo.id}>
 			<div>
@@ -7,7 +7,7 @@ const ToDoItem = ({ todo, onDeleteHandler, onUpdateHandler }) => {
 			</div>
 			<div>
 				<button onClick={() => onDeleteHandler(todo.id)}>삭제</button>
-				<button onClick={() => onUpdateHandler(todo)}>{todo.isDone ? '취소' : '완료'}</button>
+				<button onClick={() => onToggleHandler(todo)}>{todo.isDone ? '취소' : '완료'}</button>
 			</div>
 		</li>
 	);
