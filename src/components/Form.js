@@ -12,6 +12,7 @@ function Form({ toDos, setToDos }) {
 
 	const changeHandler = (event) => {
 		const { name, value } = event.target;
+		// console.log(name, value);
 		setTodo({ ...toDo, [name]: value, id: Date.now() });
 	};
 
