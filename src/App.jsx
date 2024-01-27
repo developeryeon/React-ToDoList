@@ -12,7 +12,6 @@ function App() {
 		<Main>
 			<GlobalStyle />
 			<StyledH3>TODO-LIST</StyledH3>
-
 			<Form toDos={toDos} setToDos={setToDos} />
 			<ToDoList toDos={toDos} setToDos={setToDos} />
 		</Main>

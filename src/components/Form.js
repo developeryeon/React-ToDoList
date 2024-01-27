@@ -28,7 +28,7 @@ export default function Form({ toDos, setToDos }) {
 		<StyledForm onSubmit={submitHandler}>
 			<InputWrap>
 				<InputBox type="text" name="text" placeholder="오늘의 할일을 입력해주세요!" value={toDo.text} onChange={changeHandler} required />
-				<InputBox type="text" name="body" placeholder="할일을 구체적으로 적어보세요" value={toDo.body} onChange={changeHandler} required />
+				<InputBox type="text" name="body" placeholder="할일을 구체적으로 적어보아요" value={toDo.body} onChange={changeHandler} required />
 				<InputBtn type="submit">ADD</InputBtn>
 			</InputWrap>
 		</StyledForm>
@@ -73,6 +73,6 @@ const InputBtn = styled.button`
 	cursor: pointer;
 	&:hover {
 		transition: all 0.3s;
-		background-color: #dabcfc;
+		background-color: #6666ff;
 	}
 `;
