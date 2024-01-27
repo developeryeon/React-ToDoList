@@ -1,29 +1,27 @@
 import ToDoItem from './TodoItem';
 
-function ToDoList({ todo, setToDos }) {
-	console.log(!todo);
-	if (!todo) {
+function ToDoList({ toDos, setToDos }) {
+	if (!toDos) {
 		return null;
 	}
 
 	//추가
-	const onAddHandler = (currentArr) => setToDos([...todo, currentArr]);
+	const onAddHandler = (currentArr) => setToDos([...toDos, currentArr]);
 
 	//업데이트
 	const onToggleHandler = (updated) => {
 		updated.isDone = !updated.isDone;
-		setToDos(todo.map((item) => (item.id === updated.id ? updated : item)));
+		setToDos(toDos.map((item) => (item.id === updated.id ? updated : item)));
 	};
 
 	const onDeleteHandler = (id) => {
 		const confirmDelete = window.confirm('삭제하시겠습니까?');
 		if (!confirmDelete) return;
-		setToDos(todo.filter((item) => item.id !== id));
+		setToDos(toDos.filter((item) => item.id !== id));
 	};
 
-	const workingToDos = todo.filter((item) => !item.isDone);
-	const doneToDos = todo.filter((item) => item.isDone);
-	console.log(workingToDos, doneToDos);
+	const workingToDos = toDos.filter((item) => !item.isDone);
+	const doneToDos = toDos.filter((item) => item.isDone);
 
 	return (
 		<div>
@@ -31,7 +29,7 @@ function ToDoList({ todo, setToDos }) {
 				<h3> Working 📜 </h3>
 				<ul>
 					{workingToDos.map((item) => (
-						<ToDoItem key={item.id} onToggleHandler={onToggleHandler} onDeleteHandler={onDeleteHandler} onAddHandler={onAddHandler} />
+						<ToDoItem key={item.id} todoItem={item} onToggleHandler={onToggleHandler} onDeleteHandler={onDeleteHandler} onAddHandler={onAddHandler} />
 					))}
 				</ul>
 			</div>
@@ -39,7 +37,7 @@ function ToDoList({ todo, setToDos }) {
 				<h3> Done 🚀 </h3>
 				<ul>
 					{doneToDos.map((item) => (
-						<ToDoItem key={item.id} setToDos={setToDos} onToggleHandler={onToggleHandler} onDeleteHandler={onDeleteHandler} />
+						<ToDoItem key={item.id} todoItem={item} setToDos={setToDos} onToggleHandler={onToggleHandler} onDeleteHandler={onDeleteHandler} />
 					))}
 				</ul>{' '}
 			</div>

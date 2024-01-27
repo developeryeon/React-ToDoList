@@ -1,13 +1,13 @@
-const ToDoItem = ({ todo, onDeleteHandler, onToggleHandler }) => {
+const ToDoItem = ({ todoItem, onDeleteHandler, onToggleHandler }) => {
 	return (
-		<li key={todo.id}>
+		<li key={todoItem.id}>
 			<div>
-				<h3>{todo.text}</h3>
-				<div>{todo.body}</div>
+				<h3>{todoItem.text}</h3>
+				<div>{todoItem.body}</div>
 			</div>
 			<div>
-				<button onClick={() => onDeleteHandler(todo.id)}>삭제</button>
-				<button onClick={() => onToggleHandler(todo)}>{todo.isDone ? '취소' : '완료'}</button>
+				<button onClick={() => onDeleteHandler(todoItem.id)}>삭제</button>
+				<button onClick={() => onToggleHandler(todoItem)}>{todoItem.isDone ? '취소' : '완료'}</button>
 			</div>
 		</li>
 	);
