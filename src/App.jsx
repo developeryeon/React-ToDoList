@@ -1,26 +1,34 @@
+import styled from 'styled-components';
 import React, { useState } from 'react';
 import Main from './components/Main';
 import ToDoList from './components/ToDoList';
 import Form from './components/Form';
+import GlobalStyle from './GlobalStyle';
 
-const App = () => {
+function App() {
 	const [toDos, setToDos] = useState([]);
-	// //추가
-	// const onAddHandler = (currentArr) => setToDos([...toDos, currentArr]);
-
-	// //업데이트
-	// const onUpdateHandler = (updated) => {
-	// 	updated.isDone = !updated.isDone;
-	// 	setToDos(toDos.map((item) => (item.id === updated.id ? updated : item)));
-	// };
 
 	return (
 		<Main>
-			<h1>TODO-LIST</h1>
+			<GlobalStyle />
+			<StyledH3>TODO-LIST</StyledH3>
+
 			<Form toDos={toDos} setToDos={setToDos} />
 			<ToDoList toDos={toDos} setToDos={setToDos} />
 		</Main>
 	);
-};
+}
+
+const StyledH3 = styled.h3`
+	color: #777;
+	font-size: 20px;
+	margin-left: 1rem;
+	padding: -0.2rem;
+	font-weight: 600;
+	&:hover {
+		color: #333;
+		cursor: pointer;
+	}
+`;
 
 export default App;
