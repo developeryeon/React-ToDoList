@@ -21,10 +21,9 @@ const ListWrap = styled.li`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	width: 300px;
+	width: 250px;
 	min-height: 160px;
 	gap: 12px;
-	flex-wrap: nowrap;
 	padding: 1.7rem 2rem;
 	background-color: #f5f5f5;
 	border: 2px solid #c0c0c0;

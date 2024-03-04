@@ -49,7 +49,6 @@ function ToDoList({ toDos, setToDos }) {
 const ToDoListWrap = styled.section`
 	display: flex;
 	flex-direction: column;
-
 	margin: 10px auto 10px auto;
 `;
 
@@ -59,8 +58,7 @@ const WorkingList = styled.div`
 
 const ListMap = styled.ul`
 	display: flex;
-	flex-wrap: nowrap;
-	align-items: center;
+	flex-wrap: wrap;
 `;
 
 const DoneList = styled.div`
